@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, initial-scale=1.0">
+<title>Info Board — ITS Academy Giulio Natta</title>
+<style>
+  * { margin:0; padding:0; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#060A10; }
+  iframe { width:100%; height:100%; border:none; }
+</style>
+</head>
+<body>
+<!--
+  ISTRUZIONI:
+  1. Sostituisci l'URL qui sotto con l'URL /exec della tua web app GAS
+     (quello che finisce in /exec dopo il deploy)
+  2. L'app DEVE essere deployata come "Anyone" (chiunque)
+  3. Il setXFrameOptionsMode(ALLOWALL) nel Code.gs permette l'embedding
+  4. Questa pagina mostra SOLO il contenuto dell'app, senza il banner Google
+
+  DOVE HOSTARE QUESTA PAGINA:
+  a) GitHub Pages (gratuito): crea un repo, carica questo file, attiva Pages
+  b) Direttamente nell'URL Launcher del monitor LG webOS Signage
+  c) Su una chiavetta USB collegata al monitor (se supporta file locali)
+  d) Cloudflare Pages / Netlify / qualsiasi hosting statico gratuito
+-->
+<iframe
+  id="infoboard"
+  src="https://script.google.com/a/macros/fondazionebiotecnologie.it/s/AKfycbw1eboqBNjIQ-yAlPW2_AKUrz9Y7PGOCz1QyFD9ndlDSe5_ftNGQMoFw1sjpTpvKXtD/exec"
+  allow="fullscreen"
+  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+  loading="eager">
+</iframe>
+<script>
+// Ricarica automatica ogni 12 ore per evitare memory leak del browser signage
+setTimeout(function() { location.reload(); }, 12 * 60 * 60 * 1000);
+</script>
+</body>
+</html>
